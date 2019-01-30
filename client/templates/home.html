@@ -1,4 +1,53 @@
 <template name="home">
-test
+{{#if currentUser}}
+  {{>userheader}}
+{{else}}
+<header class="landing-header">
+  <h4>Jurat</h4>
+</header>
+
+<div class="landing-content">
+  <div class="landing-vp">
+    <h2 class="vp-t">The Juidical Approach for Blockchain Governance.</h2>
+  </div>
+
+  <div class="landing-login">
+    <h2>Welcome to <b>Jurat</b>. Please <b>sign in</b> or <b>request an invitation</b>.</h2>
+    <button id="login" data-toggle="modal" data-target="#LoginUsingEthereum">
+      Login
+    </button>
+    <div class="modal fade" id="LoginUsingEthereum" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Pick an account to use</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="list-group">
+            {{#each Account}}
+              <a href="#" id="pick-account" class="list-group-item list-group-item-action"><img src="{{ethavatar address}}" />{{address}}</a>
+              <div class="setup-area" id="{{address}}">
+                {{#if setup}}
+                  <p>Please set up your account.</p>
+                  <input class="text-field" type="text" id="username" placeholder="Pick a name" />
+                  <input class="text-field" type="password" id="password" placeholder="Write a password" />
+                  <button class="button" style="margin-top:5px;" id="finish-setup">Done</button>
+                {{/if}}
+              </div>
+              <div class="setup-area" id="{{address}}login">
+                <input class="text-field" type="password" id="password" placeholder="Password" />
+                <button class="button" style="margin-top:5px;" id="login-button">Login</button>
+              </div>
+            {{/each}}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+{{/if}}
 </template>
-  

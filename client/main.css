@@ -225,7 +225,7 @@ margin-top:40px;
 .landing-vp {
 width: 60%;
 min-height: 300px;
-background-image: url(img/landing-back.png);
+background-image: url(/img/landing-back.png);
 background-repeat: no-repeat;
 float:left;
 }
@@ -244,6 +244,7 @@ color: #000000;
 #login{
 width: 434px;
 height: 38px;
+cursor: pointer;
 border-radius: 4px;
 display: block;
 text-align: center;
@@ -254,9 +255,17 @@ border:0px;
 border-radius: 4px;
 background-color: #f2be54;
 }
+.list-group-item img{
+  border-radius: 50px;
+  margin-right:5px;
+}
+.setup-area{
+  display: none;
+}
 #request-invitation{
 width: 434px;
 height: 38px;
+cursor: pointer;
 border-radius: 4px;
 display: block;
 text-align: center;
@@ -361,7 +370,7 @@ margin-top:10px;
 width:400px;
 font-weight: 500;
 font: Rubik;
-background: url(img/shape.png) no-repeat scroll 7px 7px #f1f1f1;
+background: url(/img/shape.png) no-repeat scroll 7px 7px #f1f1f1;
 padding-left:25px;
 color: rgba(0, 0, 0, 0.4);
 }
